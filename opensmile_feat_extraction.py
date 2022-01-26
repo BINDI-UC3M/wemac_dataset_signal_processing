@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+
+Author: Esther Rituerto-González
+Contact: erituert@ing.uc3m.es
+Release date: February 2022
+"""
 
 # Import libraries
 import opensmile

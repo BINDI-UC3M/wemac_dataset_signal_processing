@@ -4,11 +4,11 @@
 
 Author: Esther Rituerto-González
 Contact: erituert@ing.uc3m.es
-Release date: December 2021
+Release date: February 2022
 
 
 This script aims to pre-process the speech signals of the first 47 volunteer 
-from the database in order to obtain normalised 
+from the dataset in order to obtain normalised 
 audios per user, clean, @16kHz mono
 
 """
@@ -37,9 +37,6 @@ win_sec = 20e-3
 step_sec = 10e-3
 win = int(new_rate*win_sec)
 step = int(new_rate*step_sec)
-
-percent_high_nrg = 0.1 # Porcentaje de voz que está dispuesto a asumir para marcar silencio en una trama
-frame_len_s = 0.1 # Tamaño de ventana que marca cmo voz o silencio
 
 order_lpf = 16
 order_hpf = 6

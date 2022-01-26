@@ -3,8 +3,8 @@
 """
 
 Author: Esther Rituerto-González
-Contact: erituert@ing.uc3m.es
-Release date: December 2021
+Contact: erituert[at]ing[dot]uc3m.es
+Release date: February 2022
 
 """
 
