@@ -86,13 +86,13 @@ hop_size = 1 # Hop size in seconds
 
 Database release:
 ```bibtex
-@misc{wemac_dataset_2022,
-    author = {Jose A. Miranda and Esther Rituerto-González and Clara Luis-Mingueza and Manuel F. Canaba and Alberto Ramírez Bárcenas and Jose M. Lanza-Gutiérrez and Carmen Peláez-Moreno and Celia López-Ongil},
-    title = "{WEMAC: Women Emotion Multimodal Affective Computing Database}",
-    archivePrefix = "arXiv", 
-    note = {arXiv:...},
-    year = 2022,
-    month = feb,
+@misc{miranda2022wemac,
+      title={WEMAC: Women and Emotion Multi-modal Affective Computing dataset}, 
+      author={Jose A. Miranda and Esther Rituerto-González and Laura Gutiérrez-Martín and Clara Luis-Mingueza and Manuel F. Canabal and Alberto Ramírez Bárcenas and Jose M. Lanza-Gutiérrez and Carmen Peláez-Moreno and Celia López-Ongil},
+      year={2022},
+      eprint={2203.00456},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC}
 }
 ```
 
