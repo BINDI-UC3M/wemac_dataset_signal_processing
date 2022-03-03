@@ -10,7 +10,7 @@ The raw audio signals cannot be provided due to privacy and ethical issues, but 
 
 # Code for processing speech signals
 
-## <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/speech_processing/">[Here]</a>
+## <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/tree/master/speech_processing/">[Here]</a>
 
 ## Citation
 
