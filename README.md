@@ -14,7 +14,7 @@ The raw audio signals cannot be provided due to privacy and ethical issues, but 
 
 ## Citation
 
-Database release:
+Dataset release:
 ```bibtex
 @misc{miranda2022wemac,
       title={WEMAC: Women and Emotion Multi-modal Affective Computing dataset}, 
