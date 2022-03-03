@@ -1,86 +1,16 @@
-# Women Emotion Multimodal Affective Computing (WEMAC) Dataset, from UC3M4Safety Database - Speech Audio Files Processing
+# Women and Emotion Multimodal Affective Computing (WEMAC) dataset, from UC3M4Safety Database - Signal Processing
 
 ### Introduction
-This GitHub repository aims to provide the details of the preprocessing, feature and embeddings extraction performed in the speech audio recording files of the WEMAC Database. The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
+This GitHub repository aims to provide the details of the signal processing of the data of the WEMAC Database. 
+
+Regarding the physiological signals...
+The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
 ### <a href="https://www..../">[WEMAC Dataset Download]</a>
 
-#### Demo Audio File
-DEMO_audio_OculusRiftS.wav is a demonstration audio file recorded in the same conditions as the original raw speech files. At 48kHz, using Oculus Rift S embedded microphone.
+# Code for the preprocessing of the speech signals on WEMAC
 
-# Code for the preprocessing of the speech signals on BBDDLab47
-Required Python libraries:
-```
-numpy 1.19.5
-pandas 0.25.3
-```
-## Audio files Pre-processing
-Required Python libraries:
-```
-librosa v0.8.1 
-```
-Required files: ```main_preprocess.py, audio_tools.py, unsupervised_vad.py, librosa_feature_extraction.py, opensmile_feat_extraction.py```
-
-Code to run:
-```
-python main_preprocess.py 
-```
-
-## Feature & Embeddings Extraction
-
-### librosa, eGeMAPS & ComPARE 
-Required Python libraries:
-```
-librosa v0.8.1 
-opensmile v2.2.0 
-```
-
-Code to run:
-```
-python main_feat_extraction.py 
-```
-
-### DeepSpectrum
-Requirements: Installation of DeepSpectrum <a href="https://github.com/DeepSpectrum/DeepSpectrum/">[here]</a> <br />
-Code to run:
-```
-python extract_deespectrum.py 
-```
-
-#### Configuration 1 (VGG19 Embeddings):
-Parameters used:
-```
-window_size = 1 # Window size in seconds
-hop_size = 1 # Hop size in seconds
-net = 'resnet50' # Neural Network used
-fl = 'avg_pool' # Layer from which to extract the embeddings from
-```
-
-#### Configuration 2 (ResNet50 Embeddings):
-Parameters used:
-```
-window_size = 1 # Window size in seconds
-hop_size = 1 # Hop size in seconds
-net = 'vgg19' # Neural Network used
-fl = 'fc2' # Layer from which to extract the embeddings from
-```
-
-### VGGish
-Requirements: 
-Installation of VGGish <a href="https://github.com/tensorflow/models/tree/master/research/audioset/vggish/">[here]</a> <br />
-Code reference <a href="https://colab.research.google.com/drive/1E3CaPAqCai9P9QhJ3WYPNCVmrJU4lAhF">[here]</a> <br />
-Required files: ```vggish_slim.py, vggish_params.py, vggish_input.py, audio_tools.py```
-
-Code to run:
-```
-python main_vggish.py 
-```
-
-Parameters used:
-```
-hop_size = 1 # Hop size in seconds
-```
-
+<a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/speech">[here]</a>
 
 ## Citation
 
