@@ -8,9 +8,9 @@ The raw audio signals cannot be provided due to privacy and ethical issues, but 
 
 ### <a href="https://www..../">[WEMAC Dataset Download]</a>
 
-# Code for the preprocessing of the speech signals on WEMAC
+# Code for processing speech signals
 
-<a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/speech">[here]</a>
+## <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/speech_processing/">[Here]</a>
 
 ## Citation
 

@@ -3,10 +3,11 @@
 ### Introduction
 This GitHub subrepository aims to provide the details of the processing, feature and embeddings extraction performed in the <br>speech audio </br> recording files of the WEMAC Database. The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
-### <a href="https://www..../">[WEMAC Dataset Download]</a>
+### <a href="https://www..../">[WEMAC dataset Download]</a>
 
 
-# Code for the preprocessing of the speech signals on WEMAC dataset
+# Code for processing speech signals
+
 #### Demo Audio File
 DEMO_audio_OculusRiftS.wav is a demonstration audio file recorded in the same conditions as the original raw speech files. At 48kHz, using Oculus Rift S embedded microphone.
 
