@@ -6,9 +6,9 @@ This GitHub repository aims to provide the details of the signal processing of t
 Regarding the physiological signals...
 The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
-### <a href="https://www..../">[WEMAC Dataset Download]</a>
+### <a href="https://www..../">[WEMAC dataset Download]</a>
 
-# Code for processing speech signals
+## Code for processing speech signals
 
 ## <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/tree/master/speech_processing/">[Here]</a>
 
