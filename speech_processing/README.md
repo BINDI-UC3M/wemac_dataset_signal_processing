@@ -9,24 +9,8 @@ This GitHub subrepository aims to provide the details of the processing, feature
     <th>DOI</th>
   </tr>
   <tr>
-   <td>UC3M4Safety Database - List of Audiovisual Stimuli</td>
-   <td>https://doi.org/10.21950/CXAAHR</td>
-  </tr>
-  <tr>
-    <td>UC3M4Safety Database - List of Audiovisual Stimuli (Video)</td>   
-    <td>https://doi.org/10.21950/LUO1IZ</td>
-  </tr>
-  <tr>
-    <td>WEMAC: Biopsychosocial questionnaire and informed consent</td>
-    <td>https://doi.org/10.21950/U5DXJR</td>
-  </tr> 
-  <tr>
     <td>WEMAC: Audio features</td>
     <td>https://doi.org/10.21950/XKHCCW</td>
-  </tr>
-  <tr>
-    <td>WEMAC: Physiological signals</td>
-    <td>https://doi.org/10.21950/FNUHKE</td>
   </tr>
   <tr>
     <td>WEMAC: Emotional labelling</td>
