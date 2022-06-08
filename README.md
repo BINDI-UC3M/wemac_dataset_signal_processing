@@ -1,4 +1,5 @@
 # Women and Emotion Multimodal Affective Computing (WEMAC) dataset, from UC3M4Safety Database - Signal Processing
+<a href="https://arxiv.org/abs/2203.00456"> [Paper here] </a>
 
 ## Introduction
 This GitHub repository aims to provide the details of the signal processing of the data of the WEMAC Database. 
