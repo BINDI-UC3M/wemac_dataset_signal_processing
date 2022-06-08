@@ -1,6 +1,6 @@
 # Women and Emotion Multimodal Affective Computing (WEMAC) dataset, from UC3M4Safety Database - Speech and Audio Processing
 
-### Introduction
+## Introduction
 This GitHub subrepository aims to provide the details of the processing, feature and embeddings extraction performed in the <b>speech and audio </b> files of the WEMAC Database. The raw audio signals cannot be provided due to privacy and ethical issues, but more audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
 <table>
@@ -19,7 +19,7 @@ This GitHub subrepository aims to provide the details of the processing, feature
 </table>
 
 
-## Code for processing speech signals
+## Methodology for Speech Signals processing
 
 #### Demo Audio File
 DEMO_audio_OculusRiftS.wav is a demonstration audio file recorded in the same conditions as the original raw speech files. At 48kHz, using Oculus Rift S embedded microphone.
