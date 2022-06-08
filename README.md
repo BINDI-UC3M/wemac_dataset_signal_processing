@@ -6,8 +6,36 @@ This GitHub repository aims to provide the details of the signal processing of t
 Regarding the physiological signals...
 The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
-### <a href="https://www..../">[WEMAC dataset Download]</a>
-
+<table>
+  <tr>
+    <th>Dataset</th>
+    <th>DOI</th>
+  </tr>
+  <tr>
+   <td>UC3M4Safety Database - List of Audiovisual Stimuli</td>
+   <td>https://doi.org/10.21950/CXAAHR</td>
+  </tr>
+  <tr>
+    <td>UC3M4Safety Database - List of Audiovisual Stimuli (Video)</td>   
+    <td>https://doi.org/10.21950/LUO1IZ</td>
+  </tr>
+  <tr>
+    <td>WEMAC: Biopsychosocial questionnaire and informed consent</td>
+    <td>https://doi.org/10.21950/U5DXJR</td>
+  </tr> 
+  <tr>
+    <td>WEMAC: Audio features</td>
+    <td>https://doi.org/10.21950/XKHCCW</td>
+  </tr>
+  <tr>
+    <td>WEMAC: Physiological signals</td>
+    <td>https://doi.org/10.21950/FNUHKE</td>
+  </tr>
+  <tr>
+    <td>WEMAC: Emotional labelling</td>
+    <td>https://doi.org/10.21950/RYUCLV</td>
+  </tr>   
+</table>
 ## Code for processing speech signals
 
 ## > <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/tree/master/speech_processing/">[Here]</a>
