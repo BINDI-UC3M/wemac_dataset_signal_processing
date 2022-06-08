@@ -45,13 +45,14 @@ The raw audio signals cannot be provided due to privacy and ethical issues, but 
 
 Dataset release:
 ```bibtex
-@misc{miranda2022wemac,
-      title={WEMAC: Women and Emotion Multi-modal Affective Computing dataset}, 
-      author={Jose A. Miranda and Esther Rituerto-González and Laura Gutiérrez-Martín and Clara Luis-Mingueza and Manuel F. Canabal and Alberto Ramírez Bárcenas and Jose M. Lanza-Gutiérrez and Carmen Peláez-Moreno and Celia López-Ongil},
-      year={2022},
-      eprint={2203.00456},
-      archivePrefix={arXiv},
-      primaryClass={cs.HC}
+@misc{wemac2022miranda,
+  doi = {10.48550/ARXIV.2203.00456},
+  url = {https://arxiv.org/abs/2203.00456},
+  author = {Miranda, Jose A. and Rituerto-González, Esther and Gutiérrez-Martín, Laura and Luis-Mingueza, Clara and Canabal, Manuel F. and Bárcenas, Alberto Ramírez and Lanza-Gutiérrez, Jose M. and Peláez-Moreno, Carmen and López-Ongil, Celia},
+  title = {WEMAC: Women and Emotion Multi-modal Affective Computing dataset},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {Creative Commons Attribution 4.0 International}
 }
 ```
 
