@@ -10,20 +10,28 @@ This GitHub subrepository aims to provide the details of the processing, feature
   </tr>
   <tr>
    <td>UC3M4Safety Database - List of Audiovisual Stimuli</td>
-   <td>UC3M4Safety Database - List of Audiovisual Stimuli (Video)</td>   
-   <td>WEMAC: Biopsychosocial questionnaire and informed consent</td>
-   <td>WEMAC: Audio features</td>
-   <td>WEMAC: Physiological signals</td>
-   <td>WEMAC: Emotional labelling</td>
+   <td>https://doi.org/10.21950/CXAAHR</td>
   </tr>
   <tr>
-    <td>https://doi.org/10.21950/CXAAHR</td>
+    <td>UC3M4Safety Database - List of Audiovisual Stimuli (Video)</td>   
     <td>https://doi.org/10.21950/LUO1IZ</td>
-    <td>https://doi.org/10.21950/U5DXJR</td>
-    <td>https://doi.org/10.21950/XKHCCW</td>
-    <td>https://doi.org/10.21950/FNUHKE</td>
-    <td>https://doi.org/10.21950/RYUCLV</td>
   </tr>
+  <tr>
+    <td>WEMAC: Biopsychosocial questionnaire and informed consent</td>
+    <td>https://doi.org/10.21950/U5DXJR</td>
+  </tr> 
+  <tr>
+    <td>WEMAC: Audio features</td>
+    <td>https://doi.org/10.21950/XKHCCW</td>
+  </tr>
+  <tr>
+    <td>WEMAC: Physiological signals</td>
+    <td>https://doi.org/10.21950/FNUHKE</td>
+  </tr>
+  <tr>
+    <td>WEMAC: Emotional labelling</td>
+    <td>https://doi.org/10.21950/RYUCLV</td>
+  </tr>   
 </table>
 
 
@@ -109,7 +117,7 @@ hop_size = 1 # Hop size in seconds
 
 Dataset release:
 ```bibtex
-@misc{https://doi.org/10.48550/arxiv.2203.00456,
+@misc{wemac2022miranda,
   doi = {10.48550/ARXIV.2203.00456},
   url = {https://arxiv.org/abs/2203.00456},
   author = {Miranda, Jose A. and Rituerto-González, Esther and Gutiérrez-Martín, Laura and Luis-Mingueza, Clara and Canabal, Manuel F. and Bárcenas, Alberto Ramírez and Lanza-Gutiérrez, Jose M. and Peláez-Moreno, Carmen and López-Ongil, Celia},
