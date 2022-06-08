@@ -3,9 +3,6 @@
 ## Introduction
 This GitHub repository aims to provide the details of the signal processing of the data of the WEMAC Database. 
 
-Regarding the physiological signals...
-The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
-
 <table>
   <tr>
     <th>Dataset</th>
@@ -36,6 +33,8 @@ The raw audio signals cannot be provided due to privacy and ethical issues, but 
     <td>https://doi.org/10.21950/RYUCLV</td>
   </tr>   
 </table>
+
+The raw audio signals cannot be provided due to privacy and ethical issues, but other audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
 ## Code for Speech Signals processing
 
