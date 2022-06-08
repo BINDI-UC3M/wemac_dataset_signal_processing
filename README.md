@@ -1,6 +1,6 @@
 # Women and Emotion Multimodal Affective Computing (WEMAC) dataset, from UC3M4Safety Database - Signal Processing
 
-### Introduction
+## Introduction
 This GitHub repository aims to provide the details of the signal processing of the data of the WEMAC Database. 
 
 Regarding the physiological signals...
@@ -39,7 +39,7 @@ The raw audio signals cannot be provided due to privacy and ethical issues, but 
 
 ## Code for Speech Signals processing
 
-## > <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/tree/master/speech_processing/">[Here]</a>
+> <a href="https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/tree/master/speech_processing/">[Here]</a>
 
 ## Citation
 
