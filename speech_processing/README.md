@@ -3,7 +3,28 @@
 ### Introduction
 This GitHub subrepository aims to provide the details of the processing, feature and embeddings extraction performed in the <b>speech and audio </b> files of the WEMAC Database. The raw audio signals cannot be provided due to privacy and ethical issues, but more audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
-### <a href="https://www..../">[WEMAC dataset Download]</a>
+<table>
+  <tr>
+    <th>Dataset</th>
+    <th>DOI</th>
+  </tr>
+  <tr>
+   <td>UC3M4Safety Database - List of Audiovisual Stimuli</td>
+   <td>UC3M4Safety Database - List of Audiovisual Stimuli (Video)</td>   
+   <td>WEMAC: Biopsychosocial questionnaire and informed consent</td>
+   <td>WEMAC: Audio features</td>
+   <td>WEMAC: Physiological signals</td>
+   <td>WEMAC: Emotional labelling</td>
+  </tr>
+  <tr>
+    <td>https://doi.org/10.21950/CXAAHR</td>
+    <td>https://doi.org/10.21950/LUO1IZ</td>
+    <td>https://doi.org/10.21950/U5DXJR</td>
+    <td>https://doi.org/10.21950/XKHCCW</td>
+    <td>https://doi.org/10.21950/FNUHKE</td>
+    <td>https://doi.org/10.21950/RYUCLV</td>
+  </tr>
+</table>
 
 
 ## Code for processing speech signals
@@ -88,13 +109,14 @@ hop_size = 1 # Hop size in seconds
 
 Dataset release:
 ```bibtex
-@misc{miranda2022wemac,
-      title={WEMAC: Women and Emotion Multi-modal Affective Computing dataset}, 
-      author={Jose A. Miranda and Esther Rituerto-González and Laura Gutiérrez-Martín and Clara Luis-Mingueza and Manuel F. Canabal and Alberto Ramírez Bárcenas and Jose M. Lanza-Gutiérrez and Carmen Peláez-Moreno and Celia López-Ongil},
-      year={2022},
-      eprint={2203.00456},
-      archivePrefix={arXiv},
-      primaryClass={cs.HC}
+@misc{https://doi.org/10.48550/arxiv.2203.00456,
+  doi = {10.48550/ARXIV.2203.00456},
+  url = {https://arxiv.org/abs/2203.00456},
+  author = {Miranda, Jose A. and Rituerto-González, Esther and Gutiérrez-Martín, Laura and Luis-Mingueza, Clara and Canabal, Manuel F. and Bárcenas, Alberto Ramírez and Lanza-Gutiérrez, Jose M. and Peláez-Moreno, Carmen and López-Ongil, Celia},
+  title = {WEMAC: Women and Emotion Multi-modal Affective Computing dataset},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {Creative Commons Attribution 4.0 International}
 }
 ```
 
