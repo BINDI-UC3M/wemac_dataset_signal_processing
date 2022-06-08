@@ -1,5 +1,7 @@
 # Women and Emotion Multimodal Affective Computing (WEMAC) dataset, from UC3M4Safety Database - Speech and Audio Processing
 
+<a href="https://arxiv.org/abs/2203.00456"> [Paper here] </a>
+
 ## Introduction
 This GitHub subrepository aims to provide the details of the processing, feature and embeddings extraction performed in the <b>speech and audio </b> files of the WEMAC Database. The raw audio signals cannot be provided due to privacy and ethical issues, but more audio features or embeddings can be provided upon request. Please contact the authors for further information.
 
