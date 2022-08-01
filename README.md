@@ -1,5 +1,4 @@
 # Women and Emotion Multimodal Affective Computing (WEMAC) dataset, from UC3M4Safety Database - Signal Processing
-![alt text](https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/blob/master/wemac.png)
 
 <p align="center">
   <img src="[http://www.fillmurray.com/460/300](https://github.com/BINDI-UC3M/wemac_dataset_signal_processing/blob/master/wemac.png)">
