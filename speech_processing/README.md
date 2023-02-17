@@ -31,6 +31,11 @@ Required Python libraries:
 numpy 1.19.5
 pandas 0.25.3
 ```
+
+_Important Note_: For each of the instalation of the toolkits described below, we used:
+  1) Conda virtual environments (<a href = "https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html"> [ref] </a> for each of the toolkits to be installed
+  2) Running each .py file from each toolkit having previously activated the virtual environment and from the path to the toolkit installation folder
+  
 ## Audio files Pre-processing
 Required Python libraries:
 ```
@@ -82,11 +87,19 @@ net = 'vgg19' # Neural Network used
 fl = 'fc2' # Layer from which to extract the embeddings from
 ```
 
+### PASE
+Requirements: 
+Installation of PASE <a href="https://github.com/santi-pdp/pase">[here]</a> <br />
+
+Code to run:
+```
+python main_pase_features.py 
+```
+
 ### VGGish
 Requirements: 
 Installation of VGGish <a href="https://github.com/tensorflow/models/tree/master/research/audioset/vggish/">[here]</a> <br />
 Code reference <a href="https://colab.research.google.com/drive/1E3CaPAqCai9P9QhJ3WYPNCVmrJU4lAhF">[here]</a> <br />
-Required files: ```vggish_slim.py, vggish_params.py, vggish_input.py, audio_tools.py```
 
 Code to run:
 ```
