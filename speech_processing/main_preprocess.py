@@ -3,23 +3,29 @@
 """
 
 Author: Esther Rituerto-González
-Contact: erituert@ing.uc3m.es
-Release date: February 2022
+Contact: erituert [at] ing [dot] uc3m [dot] es 
+         esther [dot] rituerto [dot] g [at] gmail [dot] com
+Last updated: February 2023
 
 
-This script aims to pre-process the speech signals of the first 47 volunteer 
-from the dataset in order to obtain normalised 
-audios per user, clean, @16kHz mono
+This script aims to pre-process the speech signals of the WEMAC
+database in order to obtain normalised 
+audios per user @16kHz mono
 
 """
 
 # Define paths
-input_path = '...'
+import os
+input_path =  '...'
 audios_path = input_path+'Audios/'
 labels_path = input_path+'Labels/'
 output_path = '...'
-# os.mkdir(output_path)
 signals_output_path = output_path+'signals/'
+
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
+if not os.path.exists(output_path+'signals/'):
+    os.makedirs(output_path+'signals/')
 
 # Libraries
 import numpy as np
@@ -38,6 +44,9 @@ step_sec = 10e-3
 win = int(new_rate*win_sec)
 step = int(new_rate*step_sec)
 
+percent_high_nrg = 0.1 # Porcentaje de voz que está dispuesto a asumir para marcar silencio en una trama
+frame_len_s = 0.1 # Tamaño de ventana que marca cmo voz o silencio
+
 order_lpf = 16
 order_hpf = 6
 fs = 48000       # sample rate, Hz
@@ -49,9 +58,20 @@ cutoff_hpf = 50  # desired cutoff frequency of the high pass filter, Hz
 # Main
 # =============================================================================
 
-# Load usernames
-user_audio_folders = natural_sort(glob.glob(audios_path+"*"))
-user_ids = [i.split('/')[-1] for i in user_audio_folders]
+# Load users
+valid_users = pd.read_excel(labels_path+'...')
+valid_users = valid_users.drop(valid_users[valid_users['Nivel1 (0-Fallo/1-OK)'] != 1].index)
+user_ids = valid_users['Voluntaria ID'].reset_index(drop=True)
+
+# Skip incomplete users
+user_ids = user_ids.drop(user_ids[user_ids=='V025'].index)
+user_ids = user_ids.drop(user_ids[user_ids=='V098'].index)
+user_ids = user_ids.drop(user_ids[user_ids=='V124'].index)
+user_ids = user_ids.drop(user_ids[user_ids=='V129'].index)
+
+user_ids = user_ids.reset_index(drop=True)
+
+user_audio_folders = input_path+'Audios/'+user_ids.astype(str)
 
 # Load labels
 labels = pd.read_csv(labels_path+'....csv')
@@ -67,30 +87,22 @@ for idx, user_name in enumerate(user_audio_folders): #idx va de 0 al num de volu
     
     last_vid = int(videos_num[-1])
     
-    # Load all audios together and find the maximum value for normalizing later
-    if idx == 10: # User num 25 que no tiene audio 1
-        wi = 1
-        ji = 2
-    else:
-        wi = 0
-        ji = 1
-        
+    # Load all audios together and find the maximum value for normalizing later        
+    wi = 0
+    ji = 1
+    
     for w in range(wi,last_vid):
-        if (((w == 0)  and (idx!= 10)) or ((w==1) and (idx==10))):
+        if (w == 0):
             samplerate, data_full = wavfile.read(user_audios_names[w])
         else:
-            if idx == 10:
-                _ , data_aux = wavfile.read(user_audios_names[w-1])
-                data_full = np.hstack((data_full, data_aux))
-            else:
-                _ , data_aux = wavfile.read(user_audios_names[w])
-                data_full = np.hstack((data_full, data_aux))
+            _ , data_aux = wavfile.read(user_audios_names[w])
+            data_full = np.hstack((data_full, data_aux))
     
     max_value = np.max(np.abs(data_full)) 
     del data_full    
             
     ## For each audio
-    for j in range(ji,last_vid+1): # j va de 1 a 14
+    for j in range(ji,last_vid+1): # j from 1 to 14
         pos = [k for k, e in enumerate(videos_num) if e == str(j)] 
         
         # If there is more than one audiodescription for this video
@@ -131,7 +143,7 @@ for idx, user_name in enumerate(user_audio_folders): #idx va de 0 al num de volu
         y = np.hstack((data_resampled, padding))
           
         # Output filename
-        binary_label = labels['EmocionReportada'].iloc[(idx*14)+j-1]
+        binary_label = labels['Emocion.Reportada'].iloc[(idx*14)+j-1]
         output_filename = user_ids[idx]+'_VIDEO_'+str(j)+'_BINLABEL_'+str(binary_label)
     
         # Saving audiofile     

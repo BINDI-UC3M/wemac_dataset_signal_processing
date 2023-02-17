@@ -3,16 +3,16 @@
 """
 
 Author: Esther Rituerto-González
-Contact: erituert[at]ing[dot]uc3m.es
-Release date: February 2022
+Contact: erituert [at] ing [dot] uc3m [dot] es 
+         esther [dot] rituerto [dot] g [at] gmail [dot] com
+Last updated: February 2023
 
 """
 
 # Define paths
-preprocessed_audios_path = '...'
-output_path = '...'
-working_path = '...'
-
+preprocessed_audios_path = #'...'
+output_path = # '...'
+working_path = # '...'
 
 # Import libraries
 import os
@@ -25,6 +25,13 @@ from audio_tools import natural_sort
 from unsupervised_vad import process_vad
 from librosa_feature_extraction import librosa_feature_extraction
 from opensmile_feat_extraction import opensmile_feat_extraction
+
+if not os.path.exists(output_path+'/vad/'):
+    os.makedirs(output_path+'/vad/')
+if not os.path.exists(output_path+'/features/'):
+    os.makedirs(output_path+'/features/librosa/')
+	os.makedirs(output_path+'/features/compare/')
+	os.makedirs(output_path+'/features/egemaps/')
 
 
 # Define variables

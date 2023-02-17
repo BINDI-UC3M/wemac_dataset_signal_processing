@@ -1,5 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+
+Author: Esther Rituerto-González
+Contact: erituert [at] ing [dot] uc3m [dot] es 
+         esther [dot] rituerto [dot] g [at] gmail [dot] com
+Last updated: February 2023
+
 # Reference:
 # https://colab.research.google.com/drive/1E3CaPAqCai9P9QhJ3WYPNCVmrJU4lAhF
+"""
 
 import vggish_slim
 import vggish_params
@@ -10,11 +20,13 @@ import os
 import numpy as np
 from scipy.io import wavfile
 import pandas as pd
-from audio_tools import import natural_sort
+from audio_tools import natural_sort
 
 # Define paths
 preprocessed_audios_path = '...'
 output_path = '...'
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
 
 def CreateVGGishNetwork(hop_size=0.96):   # Hop size is in seconds.
   """Define VGGish model, load the checkpoint, and return a dictionary that points

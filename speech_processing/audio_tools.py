@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+
+Author: Esther Rituerto-González
+Contact: erituert [at] ing [dot] uc3m [dot] es 
+         esther [dot] rituerto [dot] g [at] gmail [dot] com
+Last updated: February 2023
+
+"""
+
 import numpy as np
 from scipy.io import wavfile
 import re

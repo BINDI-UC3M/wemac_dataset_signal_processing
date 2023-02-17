@@ -3,8 +3,10 @@
 """
 
 Author: Esther Rituerto-González
-Contact: erituert@ing.uc3m.es
-Release date: February 2022
+Contact: erituert [at] ing [dot] uc3m [dot] es 
+         esther [dot] rituerto [dot] g [at] gmail [dot] com
+Last updated: February 2023
+
 """
 
 # Import libraries
