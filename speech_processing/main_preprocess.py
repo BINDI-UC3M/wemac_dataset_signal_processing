@@ -18,7 +18,7 @@ audios per user @16kHz mono
 import os
 input_path =  '...'
 audios_path = input_path+'Audios/'
-labels_path = input_path+'Labels/'
+labels_path = input_path + 'Labels/'
 output_path = '...'
 signals_output_path = output_path+'signals/'
 
@@ -38,6 +38,7 @@ from audio_tools import natural_sort, butter_lowpass_filter, butter_highpass_fil
  
 
 # Variables
+vvg=0
 new_rate = 16000
 win_sec = 20e-3
 step_sec = 10e-3
@@ -58,28 +59,48 @@ cutoff_hpf = 50  # desired cutoff frequency of the high pass filter, Hz
 # Main
 # =============================================================================
 
-# Load users
-valid_users = pd.read_excel(labels_path+'...')
-valid_users = valid_users.drop(valid_users[valid_users['Nivel1 (0-Fallo/1-OK)'] != 1].index)
-user_ids = valid_users['Voluntaria ID'].reset_index(drop=True)
 
-# Skip incomplete users
-user_ids = user_ids.drop(user_ids[user_ids=='V025'].index)
-user_ids = user_ids.drop(user_ids[user_ids=='V098'].index)
-user_ids = user_ids.drop(user_ids[user_ids=='V124'].index)
-user_ids = user_ids.drop(user_ids[user_ids=='V129'].index)
+if (vvg == 0):
+    
+    # Load users
+    valid_users = pd.read_excel(labels_path+'....xlsx')
 
-user_ids = user_ids.reset_index(drop=True)
-
-user_audio_folders = input_path+'Audios/'+user_ids.astype(str)
-
-# Load labels
-labels = pd.read_csv(labels_path+'....csv')
-
+    valid_users = valid_users.drop(valid_users[valid_users['Nivel1 (0-Fallo/1-OK)'] != 1].index)
+    user_ids = valid_users['Voluntaria ID'].reset_index(drop=True)
+    
+    # Skip incomplete users
+    user_ids = user_ids.drop(user_ids[user_ids=='V025'].index)
+    user_ids = user_ids.drop(user_ids[user_ids=='V098'].index)
+    user_ids = user_ids.drop(user_ids[user_ids=='V124'].index)
+    user_ids = user_ids.drop(user_ids[user_ids=='V129'].index)
+    
+    user_ids = user_ids.reset_index(drop=True)
+    
+    user_audio_folders = input_path+'Audios/'+user_ids.astype(str)
+    
+    # Load labels
+    labels = pd.read_csv(labels_path+'....csv',sep=";") 
+    
+elif (vvg == 1):
+    
+    # Load users
+    valid_users = pd.read_csv(labels_path+'/Vol_nombreG.csv', sep=";")
+    
+    # Skip incomplete users
+    valid_users = valid_users.drop(valid_users[valid_users['Voluntaria']!='G30'].index)
+    
+    valid_users_wona=valid_users.dropna()
+    valid_users_wona = valid_users_wona['Voluntaria'].tolist()
+    user_ids = np.unique(valid_users_wona).tolist()
+    user_audio_folders= [input_path+'Audios/'+user_id for user_id in user_ids]
+    
+    # Load labels
+    labels = valid_users
+    
 ## Load audios
 
 # For each user
-for idx, user_name in enumerate(user_audio_folders): #idx va de 0 al num de voluntarias
+for idx, user_name in enumerate(user_audio_folders): 
     
     # Do not load demo audio
     user_audios_names = natural_sort(glob.glob(user_name+"/"+user_ids[idx]+"_VIDEO*.wav"))
@@ -100,9 +121,17 @@ for idx, user_name in enumerate(user_audio_folders): #idx va de 0 al num de volu
     
     max_value = np.max(np.abs(data_full)) 
     del data_full    
-            
+        
+    #fixing users g30 and v098   
+    if ((vvg == 1) and (user_name[-3:] == "G30")):
+        range_ = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14]
+    elif ((vvg == 0) and (user_name[-4:] == "V098")):
+        range_ = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14]
+    else:
+        range_ = range(ji,last_vid+1)
+        
     ## For each audio
-    for j in range(ji,last_vid+1): # j from 1 to 14
+    for j in range_: # j from 1 to 14
         pos = [k for k, e in enumerate(videos_num) if e == str(j)] 
         
         # If there is more than one audiodescription for this video
@@ -118,9 +147,8 @@ for idx, user_name in enumerate(user_audio_folders): #idx va de 0 al num de volu
         # If there is only one audiodescription for this video
         else:
             samplerate, data = wavfile.read(user_audios_names[pos[0]])
-        
-        #print(len(data))
-            
+
+    
         ## Start pre-processing
           
         # 1. Filtering
@@ -143,10 +171,14 @@ for idx, user_name in enumerate(user_audio_folders): #idx va de 0 al num de volu
         y = np.hstack((data_resampled, padding))
           
         # Output filename
-        binary_label = labels['Emocion.Reportada'].iloc[(idx*14)+j-1]
+        if (vvg==0):
+            binary_label = labels['Emocion.Reportada'].iloc[(idx*14)+j-1]
+        elif (vvg==1):
+            binary_label = int(labels['Reportada.Binarizado'].iloc[(idx*14)+j-1])
+
         output_filename = user_ids[idx]+'_VIDEO_'+str(j)+'_BINLABEL_'+str(binary_label)
     
         # Saving audiofile     
         y = (y*32767).astype(np.int16)
         wavfile.write(signals_output_path+'/'+output_filename+'.wav', new_rate, y)
-        
+        print('Preprocessed volunt '+user_ids[idx]+' VIDEO '+str(j))

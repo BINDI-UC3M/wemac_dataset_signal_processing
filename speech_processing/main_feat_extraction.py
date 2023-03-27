@@ -10,9 +10,9 @@ Last updated: February 2023
 """
 
 # Define paths
-preprocessed_audios_path = #'...'
-output_path = # '...'
-working_path = # '...'
+preprocessed_audios_path = '...'
+output_path = '...'
+working_path = '...'
 
 # Import libraries
 import os
@@ -30,8 +30,8 @@ if not os.path.exists(output_path+'/vad/'):
     os.makedirs(output_path+'/vad/')
 if not os.path.exists(output_path+'/features/'):
     os.makedirs(output_path+'/features/librosa/')
-	os.makedirs(output_path+'/features/compare/')
-	os.makedirs(output_path+'/features/egemaps/')
+    os.makedirs(output_path+'/features/compare/')
+    os.makedirs(output_path+'/features/egemaps/')
 
 
 # Define variables

@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+
+Author: Esther Rituerto-González
+Contact: erituert [at] ing [dot] uc3m [dot] es 
+         esther [dot] rituerto [dot] g [at] gmail [dot] com
+Last updated: March 2023
+
+"""
+
+# Define paths
+import os
+input_path =  '...'
+features_path = input_path+'features/'
+vad_path = input_path + 'vad/'
+output_path = input_path + 'features_wo_vad/'
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
+    os.makedirs(output_path+'librosa/')
+    os.makedirs(output_path+'compare/')
+    os.makedirs(output_path+'egemaps/')
+    os.makedirs(output_path+'pase/')
+    os.makedirs(output_path+'vggish/')
+    
+# Libraries
+import numpy as np
+import pandas as pd
+# import matplotlib.pyplot as plt
+import glob
+from scipy.io import wavfile
+import librosa
+from audio_tools import natural_sort, butter_lowpass_filter, butter_highpass_filter
+
+
+# Get all names of files of features contained in one of the feature folders
+filenames = natural_sort(os.listdir(features_path+'librosa/'))
+
+# For each of the feature files
+for i, filename in enumerate(filenames):
+    
+    # Just file name, no path
+    short_filename = filename.split(sep='/')[-1]
+    
+    vad_file = pd.read_csv(vad_path + short_filename)
+    
+    for feature_set in ['librosa/', 'egemaps/', 'compare/', 'pase/', 'vggish/']:
+
+        feature_file = pd.read_csv(features_path + feature_set + short_filename)
+        
+        #Remove where VAD is 0
+        new_feature_file = feature_file.mask(vad_file['VAD'] == 0).dropna()
+
+        # Save feature file without VAD samples
+        new_feature_file.to_csv(output_path+feature_set + short_filename, index=False)
+
+
+
+                              
+                              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

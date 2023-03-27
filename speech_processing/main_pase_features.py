@@ -10,8 +10,8 @@ Last updated: February 2023
 """
 
 # Define paths
-preprocessed_audios_path = '/home/erituert/Datos/GitKraken/empatia_sw/BBDDLab_analysis_tsc/preprocessed_data_Subida_02_wgithubcode/signals' #'...'
-output_path = '/home/erituert/Datos/GitKraken/empatia_sw/BBDDLab_analysis_tsc/preprocessed_data_Subida_02_wgithubcode/features/pase'# '...'
+preprocessed_audios_path = '...'
+output_path = '...'
 
 # Import libraries
 import sys
